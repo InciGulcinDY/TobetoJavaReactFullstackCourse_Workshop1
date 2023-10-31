@@ -1,33 +1,27 @@
 package org.example.question5;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.HashSet;
+import java.util.Set;
 
 //How to determine if the string has all unique characters.
 public class UniqueCharactersControl {
-    public void uniqueCharactersControl(String text){
-        // Create a HashMap Collection to store character counts
-        Map<Character, Integer> charCountMap = new HashMap<>();
-
-        // Convert the input text to lowercase to ensure case-insensitive counting
-        text = text.toLowerCase();
-
-        //Removing spaces
-        text = text.replaceAll(" ", "");
-
-        // Iterate through the characters in the text
-        for (int i = 0; i < text.length(); i++) {
-            char character = text.charAt(i);
-            // Update the character count in the map
-            charCountMap.put(character, charCountMap.getOrDefault(character, 0) + 1);
+    public void uniqueCharacterControl(String text){
+        Boolean isUnique = hasAllUniqueChars(text);
+        if(isUnique){
+            System.out.println("The string has all unique characters.");
+        }else {
+            System.out.println("Opps! The string has not all unique characters.");
         }
-
-        // Print the unique characters
-        for (Map.Entry<Character, Integer> entry : charCountMap.entrySet()) {
-            if (entry.getValue() == 1){
-                System.out.print(entry.getKey() + " ");
+    }
+    public static boolean hasAllUniqueChars(String text) {
+        Set<Character> seenChars = new HashSet<>();
+        for (char c : text.toCharArray()) {
+            if (seenChars.contains(c)) {
+                return false;
             }
+            seenChars.add(c);
         }
-
+        return true;
     }
 }
+

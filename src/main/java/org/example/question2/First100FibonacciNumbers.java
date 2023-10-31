@@ -1,22 +1,25 @@
 package org.example.question2;
 
+import java.math.BigInteger;
+//Write a Java function to print first 100 numbers in Fibonacci series?
 public class First100FibonacciNumbers {
-    // Writing first 100 Fibonacci numbers on the console
-   public void fibonacciNumbers(){
-       int n = 100;
-       long[] fibonacci = new long[n];
-       fibonacci[0] = 1;
-       fibonacci[1] = 1;
-       System.out.println(1 + "******************************");
-       System.out.println(fibonacci[0]);
-       System.out.println(2 + "******************************");
-       System.out.println(fibonacci[1]);
+    public void fibonacciNumbers() {
+        int n = 100;
+        BigInteger[] fibonacciSeries = new BigInteger[n];
 
-       for (int i = 2; i <   100; i++){
-           n=i + 1;
-           fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
-           System.out.println(n + "******************************");
-           System.out.println( fibonacci[i]);
-       }
-   }
+        //Assigning first and second fibonacci numbers into Fibonacci Series manual
+        fibonacciSeries[0] = BigInteger.ONE;
+        fibonacciSeries[1] = BigInteger.ONE;
+
+        //Assigning Fibonacci numbers into Fibonacci Series
+        for (int i = 2; i < n; i++){
+            fibonacciSeries[i] = fibonacciSeries[i-1].add(fibonacciSeries[i-2]);
+        }
+
+        // Writing first 100 Fibonacci numbers on the console
+        for(int i = 0; i < n; i++){
+            System.out.println(fibonacciSeries[i]);
+        }
+    }
 }
+

@@ -6,10 +6,10 @@ import java.util.Map;
 //Write a Java program finds first two amicable pairs. (Output: 1-> 220-284 2: 1184-1210)
 public class AmicableNumbers {
     public void amicableNumbers(){
-
+        int counter = 0;
         int[] amicableNumberArray = new int[4];
 
-        int counter = 0;
+
         int number1 = 0;
         int n = 0;
 
@@ -20,6 +20,7 @@ public class AmicableNumbers {
             //Condition for equality and Condition for the sum of division
             if (number1 != number2 && number1 == getSumOfDivisors(number2) ) {
                 //Checking whether the amicable number is on the list, or not
+
                 for (int i = 0; i < amicableNumberArray.length; i++){
                     //if the amicable number is already on the list
                     if (number1 == amicableNumberArray[i] || number1 == amicableNumberArray[i+1]){

@@ -9,11 +9,8 @@ public class CharacterCounting {
             // Create a HashMap Collection to store character counts
             Map<Character, Integer> charCountMap = new HashMap<>();
 
-            // Convert the input text to lowercase to ensure case-insensitive counting
+            // Convert the input text to lowercase to ensure case-insensitive counting, Removing spaces
             text = text.toLowerCase();
-
-            //Removing spaces
-            text = text.replaceAll(" ", "");
 
             // Iterate through the characters in the text
             for (int i = 0; i < text.length(); i++) {
