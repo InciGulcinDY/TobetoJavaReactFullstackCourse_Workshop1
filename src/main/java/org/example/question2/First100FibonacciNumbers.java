@@ -12,7 +12,7 @@ public class First100FibonacciNumbers {
        System.out.println(2 + "******************************");
        System.out.println(fibonacci[1]);
 
-       for (int i = 2; i < 100; i++){
+       for (int i = 2; i <   100; i++){
            n=i + 1;
            fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
            System.out.println(n + "******************************");
